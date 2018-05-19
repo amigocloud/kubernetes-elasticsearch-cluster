@@ -20,6 +20,10 @@ spec:
         env:
         - name: ELASTICSEARCH_URL
           value: "http://elasticsearch:9200"
+        - name: XPACK_SECURITY_ENABLED
+          value: "true"
+        - name: SERVER_BASEPATH
+          value: /kibana
         resources:
           limits:
             cpu: 1000m
