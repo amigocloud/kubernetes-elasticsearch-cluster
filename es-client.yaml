@@ -24,7 +24,7 @@ spec:
           privileged: true
       containers:
       - name: es-client
-        image: quay.io/pires/docker-elasticsearch-kubernetes:6.2.3_1
+        image: quay.io/pires/docker-elasticsearch-kubernetes:6.2.4
         env:
         - name: NAMESPACE
           valueFrom:
@@ -34,8 +34,10 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
+#        - name: ES_PLUGINS_INSTALL
+#          value: "x-pack"
         - name: CLUSTER_NAME
-          value: myesdb
+          value: amigo 
         - name: NODE_MASTER
           value: "false"
         - name: NODE_DATA
@@ -52,7 +54,7 @@ spec:
               resource: limits.cpu
         resources:
           limits:
-            cpu: 2
+            cpu: 4
         ports:
         - containerPort: 9200
           name: http
