@@ -16,14 +16,14 @@ spec:
     spec:
       containers:
       - name: kibana
-        image: docker.elastic.co/kibana/kibana:6.2.4 
+        image: docker.elastic.co/kibana/kibana-oss:6.2.4 
         env:
         - name: ELASTICSEARCH_URL
           value: "http://elasticsearch:9200"
 #        - name: ES_PLUGINS_INSTALL
 #          value: "x-pack"
-        - name: XPACK_SECURITY_ENABLED
-          value: "false"
+#        - name: XPACK_SECURITY_ENABLED
+#          value: "false"
         - name: SERVER_BASEPATH
           value: /kibana
         resources:
