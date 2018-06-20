@@ -1,0 +1,17 @@
+apiVersion: v1 
+kind: PersistentVolume
+metadata:
+  name: gluster-pv-glv1
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 10Gi
+  # volumeMode field requires BlockVolume Alpha feature gate to be enabled.
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: gluster-sc-glv1
+  hostPath:
+    path: /data/gluster-pv-glv1
